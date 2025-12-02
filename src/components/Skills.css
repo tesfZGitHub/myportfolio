@@ -1,13 +1,4 @@
-/* Skills.css - Animations and Styles */
-
-@keyframes skillBarFill {
-    from {
-        width: 0%;
-    }
-    to {
-        width: var(--target-width, 100%);
-    }
-}
+/* Skills.css - Updated without skill bars */
 
 @keyframes pulse-slow {
     0%, 100% {
@@ -30,14 +21,6 @@
 }
 
 /* Apply animations */
-.skill-bar {
-    animation: skillBarFill 1.5s ease-out forwards;
-}
-
-.pm-skill-bar {
-    animation: skillBarFill 1.2s ease-out forwards;
-}
-
 .animate-pulse-slow {
     animation: pulse-slow 2s ease-in-out infinite;
 }
@@ -48,16 +31,24 @@
     transition: transform 0.3s ease;
 }
 
-.skill-item:hover .skill-bar {
-    animation: skillBarFill 0.5s ease-out forwards;
+.skill-item:hover {
+    transform: translateX(5px);
+    transition: transform 0.3s ease;
 }
 
 .ai-skill-item:hover {
     animation: float 0.5s ease-in-out;
 }
 
+.pm-skill-item:hover, .dev-tool-item:hover, .cdci-tool-item:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
 .tech-item:hover {
     z-index: 10;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
 }
 
 /* Badge styles */
@@ -89,11 +80,7 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .skill-category, .ai-skill-item, .pm-skill-item, .dev-tool-item {
+    .skill-category, .ai-skill-item, .pm-skill-item, .dev-tool-item, .cdci-tool-item {
         animation-delay: 0s !important;
-    }
-    
-    .skill-bar, .pm-skill-bar {
-        animation-duration: 1s;
     }
 }
