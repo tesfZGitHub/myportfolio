@@ -8,7 +8,7 @@ const Profile = () => {
     phone: "+251939060612",
     location: "Addis Ababa, Ethiopia",
     linkedin: "https://linkedin.com/in/yourprofile",
-    github: "https://github.com/yourusername",
+    github: "https://github.com/tesfZGitHub",
     bio: "Passionate developer with 5+ years of experience building modern web applications. I specialize in React, Node.js, and cloud technologies. I love turning complex problems into simple, beautiful, and intuitive designs.",
     cvUrl: "/cv.pdf",
     profilePhoto: "/profile.png"
