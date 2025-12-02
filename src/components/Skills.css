@@ -1,0 +1,99 @@
+/* Skills.css - Animations and Styles */
+
+@keyframes skillBarFill {
+    from {
+        width: 0%;
+    }
+    to {
+        width: var(--target-width, 100%);
+    }
+}
+
+@keyframes pulse-slow {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Apply animations */
+.skill-bar {
+    animation: skillBarFill 1.5s ease-out forwards;
+}
+
+.pm-skill-bar {
+    animation: skillBarFill 1.2s ease-out forwards;
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 2s ease-in-out infinite;
+}
+
+/* Hover effects */
+.skill-category:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover .skill-bar {
+    animation: skillBarFill 0.5s ease-out forwards;
+}
+
+.ai-skill-item:hover {
+    animation: float 0.5s ease-in-out;
+}
+
+.tech-item:hover {
+    z-index: 10;
+}
+
+/* Badge styles */
+.skill-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.skill-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Animation delays */
+[data-aos-delay="50"] { animation-delay: 0.05s; }
+[data-aos-delay="100"] { animation-delay: 0.1s; }
+[data-aos-delay="150"] { animation-delay: 0.15s; }
+[data-aos-delay="200"] { animation-delay: 0.2s; }
+[data-aos-delay="250"] { animation-delay: 0.25s; }
+[data-aos-delay="300"] { animation-delay: 0.3s; }
+[data-aos-delay="350"] { animation-delay: 0.35s; }
+[data-aos-delay="400"] { animation-delay: 0.4s; }
+[data-aos-delay="450"] { animation-delay: 0.45s; }
+[data-aos-delay="500"] { animation-delay: 0.5s; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skill-category, .ai-skill-item, .pm-skill-item, .dev-tool-item {
+        animation-delay: 0s !important;
+    }
+    
+    .skill-bar, .pm-skill-bar {
+        animation-duration: 1s;
+    }
+}
