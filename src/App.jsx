@@ -79,7 +79,7 @@ function App() {
         id="home" 
         className="min-h-screen relative flex items-center justify-center pt-28 md:pt-32"
         style={{
-          backgroundImage: 'url("/background.jpg")', // Your background image
+          backgroundImage: 'url("./background.jpg")', // Your background image
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed' // Creates parallax effect

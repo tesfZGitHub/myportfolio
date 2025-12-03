@@ -1,4 +1,4 @@
-import { FaDownload, FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Profile = () => {
   const profileData = {
@@ -10,8 +10,8 @@ const Profile = () => {
     linkedin: "https://linkedin.com/in/yourprofile",
     github: "https://github.com/tesfZGitHub",
     bio: "Passionate developer with 5+ years of experience building modern web applications. I specialize in React, Node.js, and cloud technologies. I love turning complex problems into simple, beautiful, and intuitive designs.",
-    cvUrl: "/cv.pdf",
-    profilePhoto: "/profile.png"
+    cvUrl: "./cv.pdf",
+    profilePhoto: "./profile.png"
   };
 
   return (
@@ -24,20 +24,18 @@ const Profile = () => {
         </h2>
         
         <div className="flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto">
-          {/* ========== UPDATED PROFILE PHOTO SECTION ========== */}
+          {/* Profile Photo Section */}
           <div className="lg:w-2/5 flex justify-center">
             <div className="relative group">
-              {/* Glow effect */}
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur opacity-30 group-hover:opacity-50 transition duration-700"></div>
               
-              {/* Profile photo container - FIXED SIZING */}
               <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-2xl overflow-hidden border-4 border-gray-800 shadow-2xl">
                 <img 
                   src={profileData.profilePhoto} 
                   alt={profileData.name}
                   className="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
                   style={{
-                    objectPosition: 'center top', // Adjust if face is cut off
+                    objectPosition: 'center top',
                   }}
                   onError={(e) => {
                     e.target.onerror = null;
@@ -45,18 +43,15 @@ const Profile = () => {
                   }}
                 />
                 
-                {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-700"></div>
               </div>
               
-              {/* Photo corner accents */}
               <div className="absolute -top-3 -left-3 w-6 h-6 border-t-2 border-l-2 border-blue-400 rounded-tl-lg"></div>
               <div className="absolute -top-3 -right-3 w-6 h-6 border-t-2 border-r-2 border-purple-400 rounded-tr-lg"></div>
               <div className="absolute -bottom-3 -left-3 w-6 h-6 border-b-2 border-l-2 border-cyan-400 rounded-bl-lg"></div>
               <div className="absolute -bottom-3 -right-3 w-6 h-6 border-b-2 border-r-2 border-pink-400 rounded-br-lg"></div>
             </div>
           </div>
-          {/* ========== END PROFILE PHOTO ========== */}
 
           {/* Profile Info */}
           <div className="lg:w-3/5">
@@ -123,14 +118,15 @@ const Profile = () => {
               </div>
             </div>
 
-            {/* Download CV Button */}
+            {/* View CV Button Only */}
             <a 
-              href={profileData.cvUrl} 
-              download={`${profileData.name.replace(/\s+/g, '_')}_CV.pdf`}
-              className="inline-flex items-center gap-3 px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300"
+              href={profileData.cvUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300 hover:scale-105"
             >
-              <FaDownload />
-              Download CV
+              <FaExternalLinkAlt />
+              View CV
             </a>
           </div>
         </div>

@@ -43,6 +43,6 @@
 }
 
 /* Glow effect for cards */
-.group:hover .absolute.-inset-0.5 {
+.group:hover .absolute.-inset-negative {
     animation: pulse-glow 2s ease-in-out infinite;
 }
