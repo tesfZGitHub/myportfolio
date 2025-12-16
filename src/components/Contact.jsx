@@ -27,7 +27,7 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        'service_ut617ax',   // 🔁 replace
+        'service_n99by0h',   // 🔁 replace
         'template_r77a58w',  // 🔁 replace
         formRef.current,
         'Lllp5_kZb-rP-aXcg'    // 🔁 replace
