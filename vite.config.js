@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/myportfolio/', // Change to your actual repo name
+  base: '/', // ✅ important for Vercel
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
@@ -11,11 +11,11 @@ export default defineConfig({
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
-          let extType = assetInfo.name.split('.').at(1);
+          let extType = assetInfo.name.split('.').at(1)
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
-            extType = 'images';
+            extType = 'images'
           }
-          return `assets/${extType}/[name]-[hash][extname]`;
+          return `assets/${extType}/[name]-[hash][extname]`
         },
       }
     }
@@ -24,3 +24,4 @@ export default defineConfig({
     port: 3000
   }
 })
+
